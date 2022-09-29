@@ -1,3 +1,3 @@
 # Salus - Healthy lifestyle
 
-[Specifikációk](https://1drv.ms/w/s!Aot9SgmYd-K6gmP1uH_t6SmECFBt?e=LZwxeB)
+[Specifikációk](https://github.com/14A-C-Salus/Others/blob/main/docs/spec.md)
