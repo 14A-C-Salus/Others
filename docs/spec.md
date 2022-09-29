@@ -1,10 +1,10 @@
-**Specifikációk**
+#**Specifikációk**
 
 - A weboldalunk egy olyan webalkalmazás, ahol kcal-t tud számolni a felhasználó, recepteket tud készíteni, diétát ütemezni, elérendő célokat kitűzni, mások receptjeit értékelni, követni a naponta bevitt tápanyag mennyiségét. Ezek mellett statisztikák létrehozására, üzenőfalon kommunikálásra nyílik lehetősége. A funkciók használatához regisztráció szükséges, vagyis regisztráció nélkül a szolgáltatások egyike sem elérhető.
 
 - **Kalória számolás**:
 
-o Már előre létrehozott ételekből is tud választani a felhasználó.
+  - Már előre létrehozott ételekből is tud választani a felhasználó.
 
 o A felhasználó képes saját ételeket is elmenteni.
 
