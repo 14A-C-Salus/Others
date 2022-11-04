@@ -17,7 +17,7 @@
 
 - **verify**
   -  token: A regisztrációkor kapott token. 
-  -  (Ha nincs hozzáférése az adatbázishoz, akkor "login"-kor kiírja a "token"-ét egyelőre, hogy tesztelhesse. **A token másolásakor a mondatvégi írásjelet ne másolja ki!** Ezt az adatot későbbi fejlesztésben emailben fogjuk elküldeni magának egy linkként, ami automatikusan "verify"-olja az accountját.)
+  -  (Ha nincs hozzáférése az adatbázishoz, akkor "login"-kor kiírja a "token"-ét egyelőre, hogy tesztelhesse. ***A token másolásakor a mondatvégi írásjelet ne másolja ki!*** Ezt az adatot későbbi fejlesztésben emailben fogjuk elküldeni magának egy linkként, ami automatikusan "verify"-olja az accountját.)
 
 - **forgot-password**
   -  email: Az adatbázisban szereplő email.
