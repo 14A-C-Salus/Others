@@ -1,5 +1,5 @@
-#Links:
-- [Auth](##Auth "Auth swagger leírása")
+# Tartalomjegyzék:
+- [Auth](#Auth "Auth swagger leírása")
 - [UserProfile](#UserProfile "UserProfile swagger leírása")
 
 ## Auth
