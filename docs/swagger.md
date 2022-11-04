@@ -1,4 +1,8 @@
-# Auth
+#Links:
+- [Auth](##Auth "Auth swagger leírása")
+- [UserProfile](#UserProfile "UserProfile swagger leírása")
+
+## Auth
 
 - **register**
   -  username: 8-20 karakter hosszúság közötti string (Nem egyedi.).
@@ -24,7 +28,7 @@
   -  password: Egy jelszó, aminek minimum 8 és maximum 20 karakternek kell lennie.
   -  confirmPassword: Meg kell egyeznie a "password"-del.
 
-# UserProfile
+## UserProfile
 
 - **set-data**
   -  email: A fiók email címe. (Később a bejelentkezett fióktól magától lekéri az oldal, egyelőre be kell gépelni.)
