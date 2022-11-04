@@ -34,7 +34,7 @@
   -  email: A fiók email címe. (Később a bejelentkezett fióktól magától lekéri az oldal, egyelőre be kell gépelni.)
   -  weight: 20 és 1000 között a testsúly kg-ban megadva.
   -  height: 40 és 250 között a testmagasság cm-ben megadva.
-  -  birthDate: A születési dátuma "-"-kel elválasztva. Pl.:2001-01-31. A dátum megadásánál kötelező olyat megadni, amely alapján 12 és 100 év közötti a felhasználó.
+  -  birthDate: A születési dátuma "-"-kel elválasztva. Pl.: 2001-01-31. A dátum megadásánál kötelező olyat megadni, amely alapján 12 és 100 év közötti a felhasználó.
   -  gender: 1-3 között a nem (male, female, other). A 0 a nondefined, amikor olyan hiba üzenetet küld a program, hogy kötelező választani. (Az ellenőrzésért egyelőre kiírja a "Response body", hogy mi az adatbázisban szereplő neme.)
   -  goalWeight: A cél testsúly 20 és 1000 között kg-ban megadva. (Amennyiben nem adja meg, a program meghatározza a magának megfelelőt az adatai alapján. Az ellenőrzésért egyelőre kiírja a "Response body", hogy mi az adatbázisban szereplő goalWeight.)
   -  Minden adat kitöltése kötelező az első alkalommal, a többi esetben csak azok az adatok kerülnek módosításra, amelyeket kitöltött. 
