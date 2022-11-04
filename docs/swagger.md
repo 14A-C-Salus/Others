@@ -24,7 +24,7 @@
   -  (Ha nincs hozzáférése az adatbázishoz, akkor a "forgot-password" "Response body"-ában kiírja a "token"-t, hogy tudja használni a "reset-password"-nál. Ezt az adatot későbbi fejlesztésben emailben fogjuk elküldeni magának.)
 
 - **reset-password**
-  -  token: A "forgot-password"-ből kapott "token".
+  -  token: A "forgot-password"-ből kapott "token". A token 1 napig érvényes, addig lehet felhasználni.
   -  password: Egy jelszó, aminek minimum 8 és maximum 20 karakternek kell lennie.
   -  confirmPassword: Meg kell egyeznie a "password"-del.
 
