@@ -38,3 +38,10 @@
   -  gender: 1-3 között a nem (male, female, other). A 0 a nondefined, amikor olyan hiba üzenetet küld a program, hogy kötelező választani. (Az ellenőrzésért egyelőre kiírja a "Response body", hogy mi az adatbázisban szereplő neme.)
   -  goalWeight: A cél testsúly 20 és 1000 között kg-ban megadva. (Amennyiben nem adja meg, a program meghatározza a magának megfelelőt az adatai alapján. Az ellenőrzésért egyelőre kiírja a "Response body", hogy mi az adatbázisban szereplő goalWeight.)
   -  Minden adat kitöltése kötelező az első alkalommal, a többi esetben csak azok az adatok kerülnek módosításra, amelyeket kitöltött. 
+
+- **set-profile-picture**
+  -  email: A fiók email címe. (Később a bejelentkezett fióktól magától lekéri az oldal, egyelőre be kell gépelni.)
+  -  hairIndex: 1-5 között a profilképen megjelenő haj. (Blond, brown, ginger, black, white.)
+  -  skinIndex: 1-4 között a profilképen megjelenő bőrszín. (Darkest, dark, light, lightest.)
+  -  eyesIndex: 1-3 között a profilképen megjelenő szemszín. (Blue, green, brown.)
+  -  mouthIndex: 1-3 között a profilképen megjelenő száj. (Happy, neutral, sad.)
