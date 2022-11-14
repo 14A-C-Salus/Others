@@ -54,8 +54,7 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
   -  Minden adat kitöltése kötelező az első alkalommal, a többi esetben csak azok az adatok kerülnek módosításra, amelyeket kitöltött. 
 
 - **set-profile-picture**
-  -  <ins> Lekérdezi a jwt-ből a felhasználó email címét, frissíti a profilkép beállításait.
-  -  email: A fiók email címe. (Később a bejelentkezett fióktól magától lekéri az oldal, egyelőre be kell gépelni.)
+  -  <ins> Lekérdezi a jwt-ből a felhasználó email címét, és ezzel azonosítva frissíti a profilkép beállításait.
   -  hairIndex: 1-5 között a profilképen megjelenő haj. (Blond, brown, ginger, black, white.)
   -  skinIndex: 1-4 között a profilképen megjelenő bőrszín. (Darkest, dark, light, lightest.)
   -  eyesIndex: 1-3 között a profilképen megjelenő szemszín. (Blue, green, brown.)
