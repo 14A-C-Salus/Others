@@ -59,3 +59,8 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
   -  skinIndex: 1-4 között a profilképen megjelenő bőrszín. (Darkest, dark, light, lightest.)
   -  eyesIndex: 1-3 között a profilképen megjelenő szemszín. (Blue, green, brown.)
   -  mouthIndex: 1-3 között a profilképen megjelenő száj. (Happy, neutral, sad.)
+  
+  ## SocialMedia
+  - **follow**
+    -  <ins> Használatához a követő és a követendő felhasználónak is rendelkeznie kell egy profillal. Beköveti email alapján az adott felhasználót a bejelentkezett felhasználó által.
+    -  email: A bekövetendő felhasználó email címe.
