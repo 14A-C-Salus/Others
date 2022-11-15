@@ -2,6 +2,7 @@
 - [Authorize](#Authorize "Authorize swagger gomb leírása")
 - [Auth](#Auth "Auth swagger leírása")
 - [UserProfile](#UserProfile "UserProfile swagger leírása")
+- [SocialMedia](#SocialMedia "SocialMedia swagger leírása")
 
 ## Authorize
 <ins> Az "[Auth](#Auth "Auth swagger leírása")/login"-nál megszerzett jwt token felhasználásával azonosít, a [UserProfile](#UserProfile "UserProfile swagger leírása") funkció e nélkül nem használhatóak.
