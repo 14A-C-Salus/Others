@@ -1,5 +1,7 @@
 # Specifikációk
 
+## Funkcionális követelmények:
+
 - A weboldalunk egy olyan webalkalmazás, ahol kcal-t tud számolni a felhasználó, recepteket tud készíteni, diétát ütemezni, elérendő célokat kitűzni, mások receptjeit értékelni, követni a naponta bevitt tápanyag mennyiségét. Ezek mellett statisztikák létrehozására, üzenőfalon kommunikálásra nyílik lehetősége. A funkciók használatához regisztráció szükséges, vagyis regisztráció nélkül a szolgáltatások egyike sem elérhető.
 
 - **Kalória számolás**:
@@ -45,3 +47,6 @@
 - Az adminisztrátor számára biztosítunk lehetőséget receptek, üzenetek törlésére, amennyiben azok bizonyos előre megszabott feltételeknek nem felelnek meg. Emellett receptek hitelesítésére.
 
 - A weboldalunk célja amellett, hogy a felhasználót segítse az egészséges életmód elérésében, fenntartásában, az az, hogy közösséget építsen ezen életmód köré.
+
+## Nem funkcionális követelmények:
+
