@@ -50,3 +50,11 @@
 
 ## Nem funkcionális követelmények:
 
+- **Teljesítmény**:
+  - Jeleneg a szerver képes egyszerre legalább 1000 felhasználót fogadni úgy, hogy akadálymentesen képesek használni a weboldalunkat.
+
+- **Skálázhatóság**:
+  - Amennyiben a szolgáltatásainkra a vártnál nagyobb az érdeklődés, a szerver még sokkal több felhasználót is elbír, így lesz időnk bővíteni azt. Jelenleg ingyenes Azure .NET hosting szolgáltatást veszünk igénybe, a jövőben ezt valószínűleg egy InterServer felirtkozással oldanánk meg. Ez az igények, bevételek és egyéb tényezők függvényében változhat.
+
+- **Használhatóság**:
+  - A felhasználói felület tervezése során kitűzött cél nem csak az átláthatóság, hanem az is, hogy színvak-barát legyen. A használt színeket gondosan átválogatjuk, annak érdekében, hogy színvakok is könnyedén navigálhassák weboldalunkat.
