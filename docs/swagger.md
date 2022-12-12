@@ -30,7 +30,6 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
 - **verify**
   -  <ins> Elmenti a visszaigazolás időpontját.
   -  token: A regisztrációkor kapott token. 
-  -  (Ha nincs hozzáférése az adatbázishoz, és nem találta meg a regisztrációkor kapott emailt, akkor "login"-kor kiírja a "token"-ét egyelőre, hogy tesztelhesse. ***A token másolásakor a mondatvégi írásjelet ne másolja ki!***)
 
 - **forgot-password**
   -  <ins> Generál egy verification token-t, majd azt és annak a lejárati dátumát elmenti az adatbázisba.
@@ -45,14 +44,17 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
 
 ## UserProfile
 
-- **set-data**
-  -  <ins> Lekérdezi a jwt-ből a felhasználó email címét, és ezzel azonosítva létrehozza, vagy frissíti az adatait.
+- **create-profile**
+  -  <ins> Lekérdezi a jwt-ből a felhasználó email címét, és ezzel azonosítva létrehozza a profilját.
   -  weight: 20 és 1000 között a testsúly kg-ban megadva.
   -  height: 40 és 250 között a testmagasság cm-ben megadva.
   -  birthDate: A születési dátuma "-"-kel elválasztva. Pl.: 2001-01-31. A dátum megadásánál kötelező olyat megadni, amely alapján 12 és 100 év közötti a felhasználó.
-  -  gender: 1-3 között a nem (male, female, other). A 0 a nondefined, amikor olyan hiba üzenetet küld a program, hogy kötelező választani. (Az ellenőrzésért egyelőre kiírja a "Response body", hogy mi az adatbázisban szereplő neme.)
-  -  goalWeight: A cél testsúly 20 és 1000 között kg-ban megadva. (Amennyiben nem adja meg, a program meghatározza a magának megfelelőt az adatai alapján. Az ellenőrzésért egyelőre kiírja a "Response body", hogy mi az adatbázisban szereplő goalWeight.)
-  -  Minden adat kitöltése kötelező az első alkalommal, a többi esetben csak azok az adatok kerülnek módosításra, amelyeket kitöltött. 
+  -  gender: 1-3 között a nem (male, female, other).
+  -  goalWeight: A cél testsúly 20 és 1000 között kg-ban megadva. (Amennyiben nem adja meg, a program meghatározza a magának megfelelőt az adatai alapján.)
+
+  
+- **update-profile**
+  - A mezők úgy működnek, mint a "create-profile"-ban, de itt nem kötelező minden mező kitöltése.
 
 - **set-profile-picture**
   -  <ins> Lekérdezi a jwt-ből a felhasználó email címét, és ezzel azonosítva frissíti a profilkép beállításait.
@@ -60,8 +62,28 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
   -  skinIndex: 1-4 között a profilképen megjelenő bőrszín. (Darkest, dark, light, lightest.)
   -  eyesIndex: 1-3 között a profilképen megjelenő szemszín. (Blue, green, brown.)
   -  mouthIndex: 1-3 között a profilképen megjelenő száj. (Happy, neutral, sad.)
+  -  Először minden adat kitöltése kötelező, később csak azok, amiket módosítani akar.
   
-  ## SocialMedia
-  - **follow**
-    -  <ins> Használatához a követő és a követendő felhasználónak is rendelkeznie kell egy profillal. Beköveti email alapján az adott felhasználót a bejelentkezett felhasználó által.
-    -  email: A bekövetendő felhasználó email címe.
+## SocialMedia
+- **unfollow-follow**
+  -  <ins> Használatához a követő és a követendő felhasználónak is rendelkeznie kell egy profillal. Beköveti, ha még nincs, és kiköveti, ha már be van követve email alapján az adott felhasználót a bejelentkezett felhasználó által.
+  -  email: A bekövetendő felhasználó email címe.
+  
+- **write-comment**
+  -  <ins> Hozzáfűz egy profilhoz egy hozzászólást, aminek szerzője a bejelentkezett profil, és címzette egy adott felhasználó.
+  -  email: Címzett emaile.
+  -  Csak olyan felhasználó írhat üzenetet, és csak olyan felhasználónak, aki rendelkezik user profile-lal.
+  
+- **delete-comment**
+  -  <ins> Kitöröl egy commentet.
+  -  commentId: A törlendő hozzászólás azonosítója.
+  -  Csak a hozzászólás címzettje és írója törölheti azt.
+  
+- **modify-comment**
+  -  <ins> Módosít egy commentet.
+    -  commentId: A módosítandó hozzászólás azonosítója.
+    -  Csak a hozzászólás írója módosíthatja azt.
+
+- **get-all-comment-by-authenticated-email**
+  -  <ins> A bejelentkezett felhasználóhoz címzett hozzászólásokat kilistázza.
+  
