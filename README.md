@@ -1,3 +1,7 @@
+<p align="center">
+<img src="./docs/Full_Logo.png" alt="Full_Logo" width="250"/>
+</p>
+
 # Salus - Healthy lifestyle
 
 - [Specifikációk](https://github.com/14A-C-Salus/Others/blob/main/docs/spec.md)
