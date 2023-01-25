@@ -1,8 +1,9 @@
 # Tartalomjegyzék:
 - [Authorize](#Authorize "Authorize swagger gomb leírása")
-- [Auth](#Auth "Auth swagger leírása")
-- [UserProfile](#UserProfile "UserProfile swagger leírása")
-- [SocialMedia](#SocialMedia "SocialMedia swagger leírása")
+- [Auth](#Auth "Auth controller leírása")
+- [Food](#Food "Food controller leírása")
+- [UserProfile](#UserProfile "UserProfile controller leírása")
+- [SocialMedia](#SocialMedia "SocialMedia controller leírása")
 
 ## Authorize
 <ins> Az "[Auth](#Auth "Auth swagger leírása")/login"-nál megszerzett jwt token felhasználásával azonosít, a [UserProfile](#UserProfile "UserProfile swagger leírása") funkció e nélkül nem használhatóak.
@@ -22,7 +23,7 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
   -  confirmPassword: Meg kell egyeznie a "password"-del.
 
 - **login**
-  -  <ins> Generál egy jwt tokent, amiben a felhasználó email címe és neve szerepel.
+  -  <ins> Visszatér egy jwt tokennel, amiben a felhasználó id-ja és role-ja szerepel.
   -  email: Az adatbázisban szereplő email.
   -  password: A regisztrálásnál megadott jelszó.
   -  Nem engedi belépni a felhasználót, ha nincs "verify"-olva az accountja.
@@ -42,6 +43,41 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
   -  password: Egy jelszó, aminek minimum 8 és maximum 20 karakternek kell lennie.
   -  confirmPassword: Meg kell egyeznie a "password"-del.
 
+## Food
+- **get-recommended-tags**
+  -  <ins> Visszatér azon tagek listájával, amit ajánl az adott ételnek.
+  -  foodId: Egy az adatbázisban szereplő étel azonosítója.
+  
+- **create**
+  -  <ins> Létrehoz egy ételt.
+  -  name: Az étel neve. (5-50 karakter között.)
+  -  kcal: Az étel kcal tartalma 100 grammonként, amennyiben a felhasználó nem adja meg, a program kiszámolja automatikusan. (0-100 közötti érték.)
+  -  protein: Az étel fehérje tartalma 100 grammonként. (0-100 közötti érték.)
+  -  fat: Az étel zsír tartalma 100 grammonként. (0-100 közötti érték.)
+  -  carbohydrate: Az étel szénhidrát tartalma 100 grammonként. (0-100 közötto érték.)
+  
+- **update**
+  -  <ins> Módosítja egy az adatbázisban szereplő étel adatait.
+  -  id: Az étel azonosítója.
+  -  name: Az étel neve. (5-50 karakter között.)
+  -  kcal: Az étel kcal tartalma 100 grammonként, amennyiben a felhasználó nem adja meg, a program kiszámolja automatikusan. (0-100 közötti érték.)
+  -  protein: Az étel fehérje tartalma 100 grammonként. (0-100 közötti érték.)
+  -  fat: Az étel zsír tartalma 100 grammonként. (0-100 közötti érték.)
+  -  carbohydrate: Az étel szénhidrát tartalma 100 grammonként. (0-100 közötto érték.)
+  
+- **verify**
+  -  <ins> Egy "Admin" role-lal rendelkező felhasználó hitelesíthet egy ételt.
+  -  id: Az étel azonosítója.
+  
+- **delete**
+  -  <ins>  Egy "Admin" role-lal rendelkező felhasználó törölhet egy ételt.
+  -  id: Az étel azonosítója.
+  
+- **add-tags**
+  -  <ins> Egy ételhez tag-eket rendel.
+  -  foodId: Az étel azonosítója.
+  -  tagIds: A tagek azonosítói.
+  
 ## UserProfile
 
 - **create-profile**
@@ -51,7 +87,6 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
   -  birthDate: A születési dátuma "-"-kel elválasztva. Pl.: 2001-01-31. A dátum megadásánál kötelező olyat megadni, amely alapján 12 és 100 év közötti a felhasználó.
   -  gender: 1-3 között a nem (male, female, other).
   -  goalWeight: A cél testsúly 20 és 1000 között kg-ban megadva. (Amennyiben nem adja meg, a program meghatározza a magának megfelelőt az adatai alapján.)
-
   
 - **update-profile**
   - A mezők úgy működnek, mint a "create-profile"-ban, de itt nem kötelező minden mező kitöltése.
