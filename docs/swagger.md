@@ -5,10 +5,11 @@
 - [Oil](#Oil "Oil controller leírása")
 - [Recipe](#Recipe "Recipe controller leírása")
 - [SocialMedia](#SocialMedia "SocialMedia controller leírása")
+- [Tag](#Tag "Tag controller leírása")
 - [UserProfile](#UserProfile "UserProfile controller leírása")
 
 ## Authorize
-<ins> Az "[Auth](#Auth "Auth swagger leírása")/login"-nál megszerzett jwt token felhasználásával azonosít, a [UserProfile](#UserProfile "UserProfile swagger leírása") funkció e nélkül nem használhatóak.
+<ins> Az "[Auth](#Auth "Auth swagger leírása")/login"-nál megszerzett jwt token felhasználásával azonosít, számos controller funkciói e nélkül nem használhatóak.
 - Value: bearer + {jwt}
   - pl: 
 ```
@@ -47,7 +48,7 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
 
 ## Food
 - **get-recommended-tags**
-  -  <ins> Visszatér azon tagek listájával, amit ajánl az adott ételnek.
+  -  <ins> Visszatér azon címkék listájával, amit ajánl az adott ételnek.
   -  foodId: Egy az adatbázisban szereplő étel azonosítója.
   
 - **create**
@@ -76,9 +77,9 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
   -  id: Az étel azonosítója.
   
 - **add-tags**
-  -  <ins> Egy ételhez tag-eket rendel.
+  -  <ins> Egy ételhez címkéket rendel.
   -  foodId: Az étel azonosítója.
-  -  tagIds: A tagek azonosítói.
+  -  tagIds: A címkék azonosítói.
   
 ## Oil
 
@@ -100,6 +101,7 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
 ## Recipe
   
 - **create**
+  -  <ins> Létrehoz egy receptet.
   -  ingredientIds: Hozzávalók azonosítójának listája.
   -  ingredientPortionGramm: A hozzávalók adagjának listája grammban megadva.
   -  method: Sütési metódus 1-4 között. (baking, frying, roasting, cooking)
@@ -133,6 +135,29 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
 
 - **get-all-comment-by-authenticated-email**
   -  <ins> A bejelentkezett felhasználóhoz címzett hozzászólásokat kilistázza.
+ 
+## Tag
+
+- **create**
+  -  <ins> Egy "Admin" role-lal rendelkező felhasználó létrehozhat egy címkét.
+  -  name: A címke neve. (5-50 karakter között)
+  -  description: A címke neve. (20-500 karakter között)
+  -  property: Az automatikus javaslathoz szükséges, nem kötelező érték. Azt kell megadni, hogy az étel melyik tulajdonságára szűrjön. 1-4 között egy szám. (kcal, protein, fat, carbohydrate)
+  -  maxValue: A maximális értéke a "property"-ben megadott tulajdonságnak.
+  -  minValue: A minimális értéke a "property"-ben megadott tulajdonságnak.
+  
+- **update**
+  -  <ins> Egy "Admin" role-lal rendelkező felhasználó módosíthat egy címkét.
+  -  id: A címke azonosítója.
+  -  name: A címke neve. (5-50 karakter között)
+  -  description: A címke neve. (20-500 karakter között)
+  -  property: Az automatikus javaslathoz szükséges, nem kötelező érték. Azt kell megadni, hogy az étel melyik tulajdonságára szűrjön. 1-4 között egy szám. (kcal, protein, fat, carbohydrate)
+  -  maxValue: A maximális értéke a "property"-ben megadott tulajdonságnak.
+  -  minValue: A minimális értéke a "property"-ben megadott tulajdonságnak.
+  
+- **delete**
+  -  <ins> Egy "Admin" role-lal rendelkező felhasználó törölhet egy címkét.
+  -  id: A címke azonosítója.
   
 ## UserProfile
 
