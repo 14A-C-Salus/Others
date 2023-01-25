@@ -3,6 +3,7 @@
 - [Auth](#Auth "Auth controller leírása")
 - [Food](#Food "Food controller leírása")
 - [Oil](#Oil "Oil controller leírása")
+- [Recipe](#Recipe "Recipe controller leírása")
 - [UserProfile](#UserProfile "UserProfile controller leírása")
 - [SocialMedia](#SocialMedia "SocialMedia controller leírása")
 
@@ -95,6 +96,18 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
 - **delete**
   -  <ins> Egy "Admin" role-lal rendelkező felhasználó törölhet egy olajat.
   -  id: Egy olaj azonosítója.
+  
+## Recipe
+- **Create**
+  -  ingredientIds: Hozzávalók azonosítójának listája.
+  -  ingredientPortionGramm: A hozzávalók adagjának listája grammban megadva.
+  -  method: Sütési metódus 1-4 között. (baking, frying, roasting, cooking)
+  -  oilId: A használt olaj azonosítója. (Frying esetén kell csak megadni.)
+  -  oiPortionMl: Az olaj mennyisége ml-ben megadva.
+  -  timeInMinutes: Az elkészítési idő percben.
+  -  name: A recept címe.
+  -  description: Az étel leírása.
+  -  generateDescrition: Ha ezt igenre állítja, akkor a recept leírását az alkalmazás automatiusan legenerája.
   
 ## UserProfile
 
