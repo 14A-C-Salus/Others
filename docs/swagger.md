@@ -2,6 +2,7 @@
 - [Authorize](#Authorize "Authorize swagger gomb leírása")
 - [Auth](#Auth "Auth controller leírása")
 - [Food](#Food "Food controller leírása")
+- [Oil](#Oil "Oil controller leírása")
 - [UserProfile](#UserProfile "UserProfile controller leírása")
 - [SocialMedia](#SocialMedia "SocialMedia controller leírása")
 
@@ -77,6 +78,23 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
   -  <ins> Egy ételhez tag-eket rendel.
   -  foodId: Az étel azonosítója.
   -  tagIds: A tagek azonosítói.
+  
+## Oil
+
+- **create**
+  -  <ins> Egy "Admin" role-lal rendelkező felhasználó létrehozhat egy olajat.
+  -  name: Az olaj neve. (5-50 karakter között.)
+  -  calIn14Ml: Kalória egy evőkanál (14 ml) mennyiségben. (30-300 közötti érték.)
+  
+- **update**
+  -  <ins> Egy "Admin" role-lal rendelkező felhasználó módosíthatja egy olaj adatait.
+  -  id: Egy olaj azonosítója.
+  -  name: Az olaj neve. (5-50 karakter között.)
+  -  calIn14Ml: Kalória egy evőkanál (14 ml) mennyiségben. (30-300 közötti érték.)
+  
+- **delete**
+  -  <ins> Egy "Admin" role-lal rendelkező felhasználó törölhet egy olajat.
+  -  id: Egy olaj azonosítója.
   
 ## UserProfile
 
