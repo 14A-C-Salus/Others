@@ -3,4 +3,4 @@
 - [Specifikációk](https://github.com/14A-C-Salus/Others/blob/main/docs/spec.md)
 - [ER Modell](https://github.com/14A-C-Salus/Others/blob/main/docs/ER.md)
 - [Swaggerek működésének leírása](https://github.com/14A-C-Salus/Others/blob/main/docs/swagger.md)
-- [Swagger](http://anoblade-001-site1.atempurl.com/swagger/index.html)
+- [Swagger](http://salusprojekt-001-site1.dtempurl.com/swagger/index.html)
