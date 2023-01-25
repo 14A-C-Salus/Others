@@ -4,8 +4,8 @@
 - [Food](#Food "Food controller leírása")
 - [Oil](#Oil "Oil controller leírása")
 - [Recipe](#Recipe "Recipe controller leírása")
-- [UserProfile](#UserProfile "UserProfile controller leírása")
 - [SocialMedia](#SocialMedia "SocialMedia controller leírása")
+- [UserProfile](#UserProfile "UserProfile controller leírása")
 
 ## Authorize
 <ins> Az "[Auth](#Auth "Auth swagger leírása")/login"-nál megszerzett jwt token felhasználásával azonosít, a [UserProfile](#UserProfile "UserProfile swagger leírása") funkció e nélkül nem használhatóak.
@@ -68,7 +68,7 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
   -  carbohydrate: Az étel szénhidrát tartalma 100 grammonként. (0-100 közötto érték.)
   
 - **verify**
-  -  <ins> Egy "Admin" role-lal rendelkező felhasználó hitelesíthet egy ételt.
+  -  <ins> Egy "Admin" role-lal rendelkező felhasználó hitelesíthet egy ételt, vagy eltörölheti a hitelesítését.
   -  id: Az étel azonosítója.
   
 - **delete**
@@ -98,7 +98,8 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
   -  id: Egy olaj azonosítója.
   
 ## Recipe
-- **Create**
+  
+- **create**
   -  ingredientIds: Hozzávalók azonosítójának listája.
   -  ingredientPortionGramm: A hozzávalók adagjának listája grammban megadva.
   -  method: Sütési metódus 1-4 között. (baking, frying, roasting, cooking)
@@ -109,28 +110,8 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
   -  description: Az étel leírása.
   -  generateDescrition: Ha ezt igenre állítja, akkor a recept leírását az alkalmazás automatiusan legenerája.
   
-## UserProfile
-
-- **create-profile**
-  -  <ins> Lekérdezi a jwt-ből a felhasználó email címét, és ezzel azonosítva létrehozza a profilját.
-  -  weight: 20 és 1000 között a testsúly kg-ban megadva.
-  -  height: 40 és 250 között a testmagasság cm-ben megadva.
-  -  birthDate: A születési dátuma "-"-kel elválasztva. Pl.: 2001-01-31. A dátum megadásánál kötelező olyat megadni, amely alapján 12 és 100 év közötti a felhasználó.
-  -  gender: 1-3 között a nem (male, female, other).
-  -  goalWeight: A cél testsúly 20 és 1000 között kg-ban megadva. (Amennyiben nem adja meg, a program meghatározza a magának megfelelőt az adatai alapján.)
-  
-- **update-profile**
-  - A mezők úgy működnek, mint a "create-profile"-ban, de itt nem kötelező minden mező kitöltése.
-
-- **set-profile-picture**
-  -  <ins> Lekérdezi a jwt-ből a felhasználó email címét, és ezzel azonosítva frissíti a profilkép beállításait.
-  -  hairIndex: 1-5 között a profilképen megjelenő haj. (Blond, brown, ginger, black, white.)
-  -  skinIndex: 1-4 között a profilképen megjelenő bőrszín. (Darkest, dark, light, lightest.)
-  -  eyesIndex: 1-3 között a profilképen megjelenő szemszín. (Blue, green, brown.)
-  -  mouthIndex: 1-3 között a profilképen megjelenő száj. (Happy, neutral, sad.)
-  -  Először minden adat kitöltése kötelező, később csak azok, amiket módosítani akar.
-  
 ## SocialMedia
+  
 - **unfollow-follow**
   -  <ins> Használatához a követő és a követendő felhasználónak is rendelkeznie kell egy profillal. Beköveti, ha még nincs, és kiköveti, ha már be van követve email alapján az adott felhasználót a bejelentkezett felhasználó által.
   -  email: A bekövetendő felhasználó email címe.
@@ -153,3 +134,24 @@ bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoY
 - **get-all-comment-by-authenticated-email**
   -  <ins> A bejelentkezett felhasználóhoz címzett hozzászólásokat kilistázza.
   
+## UserProfile
+
+- **create-profile**
+  -  <ins> Lekérdezi a jwt-ből a felhasználó email címét, és ezzel azonosítva létrehozza a profilját.
+  -  weight: 20 és 1000 között a testsúly kg-ban megadva.
+  -  height: 40 és 250 között a testmagasság cm-ben megadva.
+  -  birthDate: A születési dátuma "-"-kel elválasztva. Pl.: 2001-01-31. A dátum megadásánál kötelező olyat megadni, amely alapján 12 és 100 év közötti a felhasználó.
+  -  gender: 1-3 között a nem (male, female, other).
+  -  goalWeight: A cél testsúly 20 és 1000 között kg-ban megadva. (Amennyiben nem adja meg, a program meghatározza a magának megfelelőt az adatai alapján.)
+  
+- **update-profile**
+  - A mezők úgy működnek, mint a "create-profile"-ban, de itt nem kötelező minden mező kitöltése.
+
+- **set-profile-picture**
+  -  <ins> Lekérdezi a jwt-ből a felhasználó email címét, és ezzel azonosítva frissíti a profilkép beállításait.
+  -  hairIndex: 1-5 között a profilképen megjelenő haj. (Blond, brown, ginger, black, white.)
+  -  skinIndex: 1-4 között a profilképen megjelenő bőrszín. (Darkest, dark, light, lightest.)
+  -  eyesIndex: 1-3 között a profilképen megjelenő szemszín. (Blue, green, brown.)
+  -  mouthIndex: 1-3 között a profilképen megjelenő száj. (Happy, neutral, sad.)
+  -  Először minden adat kitöltése kötelező, később csak azok, amiket módosítani akar.
+ 
