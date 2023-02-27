@@ -1,4 +1,4 @@
-﻿<h1 align="center"><b> Backend services </b></h1>
+<h1 align="center"><b> Backend services </b></h1>
 
 <h2> <u> Documentation for AuthService: </u></h2>
 
@@ -81,7 +81,7 @@ The RecipeService class provides CRUD operations for the Recipe entity.
 
 <b>Methods:</b>
 
-- WriteRecipe(WriteRecipeRequest request): This method creates a new recipe object with the specified author, name, method, time, and ingredients, calculates the nutritional values and generates a description for the recipe, validates the input data, and returns the created recipe object.
+- Create(WriteRecipeRequest request): This method creates a new recipe object with the specified author, name, method, time, and ingredients, calculates the nutritional values and generates a description for the recipe, validates the input data, and returns the created recipe object.
 - Update(UpdateRecipeRequest request): This method updates the recipe object with the specified id, author, name, method, time, and ingredients, calculates the nutritional values and generates a description for the recipe, validates the input data, and returns the updated recipe object.
 - Delete(int recipeId): This method deletes the recipe object with the specified id.
 
@@ -104,17 +104,17 @@ The SocialMediaService class provides methods for commenting, following/unfollow
 
 <b>Methods:</b>
 
-- ModifyComment(ModifyCommentRequest request) This method modifies the body of a comment made by the authenticated user. It takes a ModifyCommentRequest object as a parameter, which contains the comment ID and the new body. It returns a Comment object that represents the modified comment. If the comment doesn't exist or the authenticated user is not the author of the comment, an exception will be thrown.
+- ModifyComment(ModifyCommentRequest request) This method modifies the body of a comment made by the authenticated user. It takes a ModifyCommentRequest object as a parameter, which contains the comment ID and the new body. It returns a Comment object that represents the modified comment. 
 - CreateCommentListByAuthenticatedEmail: This method retrieves a list of comments directed to the authenticated user. It returns a List of Comment objects. If the authenticated user doesn't exist or there are no comments for the user, an empty list will be returned.
-- DeleteCommentById(int commentId): This method deletes a comment made by the authenticated user. It takes the ID of the comment as a parameter. If the comment doesn't exist or the authenticated user is not the author or recipient of the comment, an exception will be thrown.
-- StartOrStopFollow(UnFollowFollowRequest request): This method allows the authenticated user to follow or unfollow another user. It takes an UnFollowFollowRequest object as a parameter, which contains the email address of the user to follow/unfollow. If the user to follow/unfollow doesn't exist or the authenticated user is attempting to follow themselves, an exception will be thrown.
-- SendComment(WriteCommentRequest request) This method allows the authenticated user to send a comment to another user. It takes a WriteCommentRequest object as a parameter, which contains the email address of the recipient and the comment body. It returns a Comment object that represents the sent comment. If the recipient user doesn't exist, an exception will be thrown.
+- DeleteCommentById(int commentId): This method deletes a comment made by the authenticated user. It takes the ID of the comment as a parameter. 
+- StartOrStopFollow(UnFollowFollowRequest request): This method allows the authenticated user to follow or unfollow another user. It takes an UnFollowFollowRequest object as a parameter, which contains the email address of the user to follow/unfollow. 
+- SendComment(WriteCommentRequest request) This method allows the authenticated user to send a comment to another user. It takes a WriteCommentRequest object as a parameter, which contains the email address of the recipient and the comment body. It returns a Comment object that represents the sent comment. 
 
 <b>Exceptions:</b>
 
 - "Comment doesn't exist." - Thrown when a comment with the specified ID doesn't exist. 
 - "You do not have permission to modify the comment." - Thrown when the authenticated user does not have permission to modify the specified comment.
-- "You do not have permission to delete the comment." - Thrown when the authenticated user does not have permission to delete the specified comment. 
+- ` `"You do not have permission to delete the comment." - Thrown when the authenticated user does not have permission to delete the specified comment. 
 - "Auth to follow doesn't exist." - Thrown when an Auth object with the specified email address doesn't exist. 
 - "You need to create a user profile first!" - Thrown when the authenticated user doesn't have a user profile and tries to perform an action that requires one. 
 - "Invalid 'toAuth' email." - Thrown when an invalid email address is passed to the SendComment method. 
@@ -158,14 +158,14 @@ The UserProfileService class provides operations for managing user profiles.
 
 <b>Exceptions:</b>
 
-- "You must log in first." - Thrown when auth is null in the constructor of UserProfileService.
-- "The user must be between 12 and 100 years old!" - Thrown when the user's age is less than 12 or greater than 100 in CheckCreateRequest and CheckUpdateRequest methods.
-- "The user weight must be over 20 and 1000!" - Thrown when the user's weight is less than 20 or greater than 1000 in CheckCreateRequest and CheckUpdateRequest methods.
-- "The user height must be between 40 and 250 cm!" - Thrown when the user's height is less than 40 or greater than 250 in CheckCreateRequest and CheckUpdateRequest methods.
-- "You must select your gender!" - Thrown when the user's gender is nondefined in CheckCreateRequest method.
-- "Invalid gender!" - Thrown when the user's gender is less than nondefined or greater than other in CheckCreateRequest and CheckUpdateRequest methods.
-- "The user goal weight must be over 20 and 1000!" - Thrown when the user's goal weight is less than 20 or greater than 1000 in CheckCreateRequest and CheckUpdateRequest methods.
-- "Invalid hair!" - Thrown when the user's hairIndex is less than nondefined or greater than white in CheckProfilePicture method.
-- "Invalid skin color!" - Thrown when the user's skinIndex is less than nondefined or greater than lightest in CheckProfilePicture method.
-- "Invalid eye color!" - Thrown when the user's eyesIndex is less than nondefined or greater than brown in CheckProfilePicture method.
-- "Invalid mouth!" - Thrown when the user's mouthIndex is less than nondefined or greater than smiling in CheckProfilePicture method.
+- "You must log in first." - Thrown when auth is null.
+- "The user must be between 12 and 100 years old!" - Thrown when the user's age is less than 12 or greater than 100.
+- "The user weight must be over 20 and 1000!" - Thrown when the user's weight is less than 20 or greater than 1000.
+- "The user height must be between 40 and 250 cm!" - Thrown when the user's height is less than 40 or greater than 250.
+- "You must select your gender!" - Thrown when the user's gender is nondefined.
+- "Invalid gender!" - Thrown when the user's gender is less than nondefined or greater than other.
+- "The user goal weight must be over 20 and 1000!" - Thrown when the user's goal weight is less than 20 or greater than 1000.
+- "Invalid hair!" - Thrown when the user's hairIndex is less than nondefined or greater than white.
+- "Invalid skin color!" - Thrown when the user's skinIndex is less than nondefined or greater than lightest.
+- "Invalid eye color!" - Thrown when the user's eyesIndex is less than nondefined or greater than brown.
+- "Invalid mouth!" - Thrown when the user's mouthIndex is less than nondefined or greater than smiling.
