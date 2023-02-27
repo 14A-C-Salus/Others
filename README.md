@@ -7,4 +7,5 @@
 - [Specifikációk](https://github.com/14A-C-Salus/Others/blob/main/docs/spec.md)
 - [ER Modell](https://github.com/14A-C-Salus/Others/blob/main/docs/ER.md)
 - [Swaggerek működésének leírása](https://github.com/14A-C-Salus/Others/blob/main/docs/swagger.md)
+- [Backend szolgáltatások leírása (EN)](https://github.com/14A-C-Salus/Others/blob/main/docs/Backend services.md)
 - [Swagger](http://salusprojekt-001-site1.dtempurl.com/swagger/index.html)
