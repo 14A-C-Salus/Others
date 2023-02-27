@@ -114,7 +114,7 @@ The SocialMediaService class provides methods for commenting, following/unfollow
 
 - "Comment doesn't exist." - Thrown when a comment with the specified ID doesn't exist. 
 - "You do not have permission to modify the comment." - Thrown when the authenticated user does not have permission to modify the specified comment.
-- ` `"You do not have permission to delete the comment." - Thrown when the authenticated user does not have permission to delete the specified comment. 
+- "You do not have permission to delete the comment." - Thrown when the authenticated user does not have permission to delete the specified comment. 
 - "Auth to follow doesn't exist." - Thrown when an Auth object with the specified email address doesn't exist. 
 - "You need to create a user profile first!" - Thrown when the authenticated user doesn't have a user profile and tries to perform an action that requires one. 
 - "Invalid 'toAuth' email." - Thrown when an invalid email address is passed to the SendComment method. 
