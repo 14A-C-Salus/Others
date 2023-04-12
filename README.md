@@ -6,6 +6,7 @@
 
 - [Specifikációk](https://github.com/14A-C-Salus/Others/blob/main/docs/spec.md)
 - [ER Modell](https://github.com/14A-C-Salus/Others/blob/main/docs/ER.md)
+- [AB Modell](https://github.com/14A-C-Salus/Others/blob/main/docs/AB.md)
 - [Swaggerek működésének leírása](https://github.com/14A-C-Salus/Others/blob/main/docs/swagger.md)
 - [Backend szolgáltatások leírása \[EN\]](https://github.com/14A-C-Salus/Others/blob/main/docs/Backend_services_EN.md)
 - [Backend szolgáltatások leírása \[HU\]](https://github.com/14A-C-Salus/Others/blob/main/docs/Backend_services_HU.md)
